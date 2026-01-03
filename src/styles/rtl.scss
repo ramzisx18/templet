@@ -1,0 +1,410 @@
+// RTL Support Styles
+
+// Arabic Font Family
+$arabic-font: 'Tajawal', 'Cairo', sans-serif;
+
+[dir="rtl"] {
+  text-align: right;
+  
+  // Header
+  .header__action {
+    flex-direction: row-reverse;
+  }
+  
+  .main-menu ul li {
+    margin-left: 35px;
+    margin-right: 0;
+  }
+  
+  .submenu {
+    left: auto;
+    right: 0;
+  }
+  
+  // Hero
+  .hero__search-input {
+    span {
+      left: auto;
+      right: 20px;
+    }
+    input {
+      padding-left: 20px;
+      padding-right: 50px;
+    }
+  }
+  
+  .ml-20 {
+    margin-left: 0 !important;
+    margin-right: 20px !important;
+  }
+  
+  .ml-70 {
+    margin-left: 0 !important;
+    margin-right: 70px !important;
+  }
+  
+  .mr-20, .mr-25 {
+    margin-right: 0 !important;
+    margin-left: 20px !important;
+  }
+  
+  .ml-15 {
+    margin-left: 0 !important;
+    margin-right: 15px !important;
+  }
+  
+  // Footer
+  .footer__link ul li a::before {
+    left: auto;
+    right: 0;
+  }
+  
+  .footer__bottom-link ul li {
+    margin-left: 0;
+    margin-right: 30px;
+  }
+  
+  // Products
+  .product__content {
+    text-align: right;
+  }
+  
+  // Blog
+  .blog__content {
+    text-align: right;
+  }
+  
+  // Forms
+  .form-control {
+    text-align: right;
+  }
+  
+  // Icons with text
+  .far, .fas, .fab, .fal {
+    margin-right: 0;
+    margin-left: 8px;
+  }
+  
+  // Breadcrumb
+  .breadcrumb__list li {
+    margin-right: 0;
+    margin-left: 10px;
+    
+    &::after {
+      margin-left: 0;
+      margin-right: 10px;
+    }
+  }
+  
+  // Cart
+  .cart__thumb {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+  
+  // Sidebar
+  .sidebar__area {
+    left: auto;
+    right: -300px;
+    
+    &.sidebar-opened {
+      right: 0;
+    }
+  }
+  
+  // Dropdown
+  .has-dropdown > a::after {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+  
+  // Text alignment utilities
+  .text-start {
+    text-align: right !important;
+  }
+  
+  .text-end {
+    text-align: left !important;
+  }
+  
+  // Flex utilities
+  .justify-content-end {
+    justify-content: flex-start !important;
+  }
+  
+  .justify-content-start {
+    justify-content: flex-end !important;
+  }
+  
+  // Padding/Margin adjustments
+  .ps-3, .ps-4, .ps-5 {
+    padding-left: 0 !important;
+    padding-right: 1rem !important;
+  }
+  
+  .pe-3, .pe-4, .pe-5 {
+    padding-right: 0 !important;
+    padding-left: 1rem !important;
+  }
+  
+  .ms-auto {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+  
+  .me-auto {
+    margin-right: 0 !important;
+    margin-left: auto !important;
+  }
+  
+  // Language switcher
+  .language-switcher {
+    .lang-dropdown {
+      left: auto;
+      right: 0;
+    }
+  }
+  
+  // Trending items
+  .trending__thumb {
+    margin-right: 0 !important;
+    margin-left: 25px;
+  }
+  
+  // Link button arrow
+  .link-btn i {
+    margin-right: 0;
+    margin-left: 5px;
+    transform: rotate(180deg);
+  }
+}
+
+// Arabic Typography
+[lang="ar"] {
+  font-family: $arabic-font !important;
+  
+  body {
+    font-family: $arabic-font !important;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+  
+  h1, h2, h3, h4, h5, h6,
+  .hero__title,
+  .section__title,
+  .category__title,
+  .product__title,
+  .trending__title,
+  .banner__title,
+  .subscribe__title,
+  .footer__widget-title,
+  .page__title {
+    font-family: $arabic-font !important;
+    font-weight: 800 !important;
+    letter-spacing: 0;
+  }
+  
+  p, span, a, li, label, input, textarea, button {
+    font-family: $arabic-font !important;
+    font-weight: 500;
+  }
+  
+  // Hero Section
+  .hero__title {
+    font-size: 42px;
+    line-height: 1.4;
+    
+    span {
+      font-weight: 500;
+    }
+  }
+  
+  .hero__content p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  
+  // Section Titles
+  .section__title {
+    font-size: 36px;
+    line-height: 1.4;
+  }
+  
+  .section__title-wrapper p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  
+  // Navigation
+  .main-menu ul li a {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .submenu li a {
+    font-size: 14px;
+  }
+  
+  // Buttons
+  .m-btn {
+    font-family: $arabic-font !important;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+  
+  // Product Cards
+  .product__title {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 700 !important;
+  }
+  
+  .product__tag a,
+  .product__price span {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  // Category
+  .category__title {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 700 !important;
+  }
+  
+  .link-btn {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  // Trending
+  .trending__title {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 700 !important;
+  }
+  
+  .trending__content p {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  // Banner
+  .banner__title {
+    font-size: 24px;
+    line-height: 1.4;
+    font-weight: 800 !important;
+  }
+  
+  .banner__item p {
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+  
+  // Subscribe
+  .subscribe__title {
+    font-size: 32px;
+    line-height: 1.4;
+    font-weight: 800 !important;
+  }
+  
+  .subscribe__content p {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .subscribe__form input {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  // Footer
+  .footer__widget-title {
+    font-size: 18px;
+    font-weight: 700 !important;
+  }
+  
+  .footer__link ul li a {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .footer__copyright p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  // CTA
+  .cta__content p {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  // Breadcrumb
+  .page__title {
+    font-size: 36px;
+    font-weight: 800 !important;
+  }
+  
+  .breadcrumb-item {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  // Forms
+  input, textarea, select {
+    font-family: $arabic-font !important;
+    font-weight: 500;
+  }
+  
+  input::placeholder,
+  textarea::placeholder {
+    font-family: $arabic-font !important;
+    font-weight: 500;
+  }
+  
+  // Testimonials
+  .testimonial__info h5 {
+    font-size: 16px;
+    font-weight: 700 !important;
+  }
+  
+  .testimonial__text p {
+    font-size: 14px;
+    line-height: 1.7;
+    font-weight: 500;
+  }
+  
+  // Navigation
+  .main-menu ul li a {
+    font-weight: 600 !important;
+  }
+  
+  .submenu li a {
+    font-weight: 500 !important;
+  }
+  
+  // Hero
+  .hero__title {
+    font-weight: 900 !important;
+    
+    span {
+      font-weight: 700 !important;
+    }
+  }
+  
+  .hero__content p {
+    font-weight: 500;
+  }
+  
+  // Section titles
+  .section__title {
+    font-weight: 800 !important;
+  }
+  
+  .section__title-wrapper p {
+    font-weight: 500;
+  }
+}
