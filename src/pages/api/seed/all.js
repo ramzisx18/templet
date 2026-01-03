@@ -3,10 +3,6 @@ import CMS from '../../../models/CMS';
 import Category from '../../../models/Category';
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
-
   await dbConnect();
 
   try {
