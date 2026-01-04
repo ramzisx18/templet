@@ -8,7 +8,7 @@ const TemplateSchema = new mongoose.Schema({
   price: { type: Number, required: true },
   description: { type: String },
   descriptionAr: { type: String },
-  features: { type: String },
+  features: [{ type: String }],
   img: { type: String },
   img_big: { type: String },
   demoUrl: { type: String },

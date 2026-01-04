@@ -33,10 +33,14 @@ const Products = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const dataToSend = {
+      ...formData,
+      features: formData.features ? formData.features.split('\n').filter(f => f.trim()) : [],
+    };
     if (editingProduct) {
-      dispatch(updateTemplate({ ...formData, _id: editingProduct._id }));
+      dispatch(updateTemplate({ ...dataToSend, _id: editingProduct._id }));
     } else {
-      dispatch(addTemplate(formData));
+      dispatch(addTemplate(dataToSend));
     }
     resetForm();
   };
@@ -46,7 +50,9 @@ const Products = () => {
     setFormData({
       title: product.title || '', category: product.category || '', cms: product.cms || '',
       price: product.price || '', demoUrl: product.demoUrl || '', img: product.img || '',
-      description: product.description || '', features: product.features || '', isActive: product.isActive !== false,
+      description: product.description || '', 
+      features: Array.isArray(product.features) ? product.features.join('\n') : (product.features || ''), 
+      isActive: product.isActive !== false,
     });
     setShowForm(true);
   };
@@ -175,7 +181,7 @@ const Products = () => {
                   <div className="form-group"><label>رابط الصورة</label><input type="text" name="img" className="form-control" value={formData.img} onChange={handleChange} /></div>
                 </div>
                 <div className="form-group"><label>الوصف</label><textarea name="description" className="form-control" rows="2" value={formData.description} onChange={handleChange}></textarea></div>
-                <div className="form-group"><label>المميزات</label><textarea name="features" className="form-control" rows="2" value={formData.features} onChange={handleChange}></textarea></div>
+                <div className="form-group"><label>المميزات (كل ميزة في سطر)</label><textarea name="features" className="form-control" rows="3" value={formData.features} onChange={handleChange} placeholder="ميزة 1&#10;ميزة 2&#10;ميزة 3"></textarea></div>
                 <div className="form-group" style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <input type="checkbox" name="isActive" checked={formData.isActive} onChange={handleChange} />
                   <label style={{ margin: 0 }}>نشط</label>
